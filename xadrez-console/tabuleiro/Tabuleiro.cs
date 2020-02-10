@@ -21,9 +21,26 @@ namespace tabuleiro {
 
         }
 
+        public Peca Peca(Posicao pos) {
+            return pecas[pos.linha, pos.coluna];
+
+        }
+
         public void colocarPeca(Peca p, Posicao pos) {
             pecas[pos.linha, pos.coluna] = p;
             p.posicao = pos;    
         }
+
+        public bool posicaoValida(Posicao pos) {
+            if (pos.linha < 0 || pos.linha >= linhas || pos.coluna < 0 || pos.coluna>=colunas) {
+                return false;
+            }
+            return true;
+        }
     }
+
+
+
+
+
 }
