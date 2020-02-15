@@ -19,7 +19,7 @@ namespace xadrez_console.xadrez {
         }
 
         public Posicao toPosicao() {
-            return "" + coluna + linha;
+            return new Posicao(8 - linha, coluna - 'a');
         }
     }
 }

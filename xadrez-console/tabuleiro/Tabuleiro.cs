@@ -32,7 +32,6 @@ namespace tabuleiro {
         }
 
         public void colocarPeca(Peca p, Posicao pos) {
-
             if (existePeca(pos)) {
                 throw new TabuleiroException("Ja existe uma peca nessa posicao");
             }
@@ -51,6 +50,16 @@ namespace tabuleiro {
             if (!posicaoValida(pos)) {
                 throw new TabuleiroException("Posicao invalida");
             }
+        }
+
+        public Peca retirarPeca(Posicao pos) {
+            if (Peca(pos) == null) {
+                return null;
+            }
+            Peca aux = Peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null;
+            return aux;
         }
 
 
