@@ -1,6 +1,6 @@
 ﻿using tabuleiro;
 
-namespace       xadrez {
+namespace xadrez {
     class Torre : Peca {
 
         public Torre(Tabuleiro tab, Cor cor) : base(tab, cor) {
@@ -8,7 +8,7 @@ namespace       xadrez {
         }
 
         public override string ToString() {
-            return "T";
+            return "T ";
         }
 
         public override bool[,] movimentosPossiveis() {
