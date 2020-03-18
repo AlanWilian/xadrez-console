@@ -1,25 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using tabuleiro;
+﻿using tabuleiro;
 
-namespace xadrez_console.xadrez {
+namespace xadrez_console.xadrez
+{
     class PosicaoXadrez {
 
-        public int coluna { get; set; }
+        public char coluna { get; set; }
         public int linha { get; set; }
 
-        public PosicaoXadrez(int coluna, int linha) {
+        public PosicaoXadrez(char coluna, int linha)
+        {
             this.coluna = coluna;
             this.linha = linha;
         }
 
-        public override string ToString() {
+        public Posicao toPosicao()
+        {
+            return new Posicao(8 - linha, coluna - 'a');
+        }
+
+        public override string ToString()
+        {
             return "" + coluna + linha;
         }
 
-        public Posicao toPosicao() {
-            return new Posicao(8 - linha, coluna - 'a');
-        }
     }
 }
